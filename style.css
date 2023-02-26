@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 2%;
+    font-weight: light;
+}
+
+.board{
+    width: 400px;
+    height: 400px;
+    margin: 8% auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner-box{
+    width: 133.33px;
+    height: 133.33px;
+    font-size: 90px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content:  center;
+    position: relative;
+}
+
+.horizondal-line{
+    border-bottom: 3px solid black;
+}
+
+.vertical-line{
+    border-right: 3px solid black; 
+}
+
+
+.inner-box:hover{
+    cursor: pointer;
+    background-color: rgba(129, 130, 130, 0.1);
+}
+
+.inner-box.x,
+.inner-box.o{
+    cursor: not-allowed;
+}
+
+.inner-box.x::before,
+.inner-box.x::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 120px;
+    background-color: black;
+}
+
+.inner-box.x::before{
+    transform: rotate(45deg);
+}
+
+.inner-box.x::after{
+    transform: rotate(-45deg);
+}
+
+.inner-box.o::before
+{
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 60px;
+    background-color: black;
+}
+
+.inner-box.o::after{
+    content: '';
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 60px;
+    background-color: rgb(255, 252, 252);
+}
+
+.winner-show{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 15%;
+    color: rgb(34, 34, 34);
+}
