@@ -25,6 +25,7 @@ var checkBoard = 9;
 
 function startGame(arrayEle){
 
+    // startFun();
 
     let curPlayer = turn? "x":"o";
 
@@ -48,6 +49,7 @@ function startGame(arrayEle){
     }
     else if(checkDraw(board)){
         console.log("draw");
+        return false;
     }
     else{
     // changeTurn
@@ -116,7 +118,9 @@ function wrongDiagonalCheck(board,curPlayer){
 function checkDraw(board){
     // console.log(board);
     if(checkBoard == 0){
-        window.alert("draw");
+        // window.alert("draw");
+        toshow("draw");
+        announceDraw()
         console.log("draw");
         return
     }
@@ -132,5 +136,28 @@ function toshow(par){
         document.getElementById("head").style.display = "none";
         document.getElementById("bodyColor").style.backgroundColor = "rgba(47,157,184,0.5)";
         document.getElementById("main-board").style.display = "none";
+        document.getElementById("draw").style.display = "none";
     }
+    else if(par == "head"){
+        document.getElementById("winner").style.display = "none";
+        document.getElementById("head").style.display = "block";
+        // document.getElementById("bodyColor").style.backgroundColor = "rgba(47,157,184,0.5)";
+        document.getElementById("main-board").style.display = "none";
+    }
+    else if(par == "draw"){
+        document.getElementById("winner").style.display = "none";
+        document.getElementById("head").style.display = "none";
+        document.getElementById("bodyColor").style.backgroundColor = "rgba(47,157,184,0.5)";
+        document.getElementById("main-board").style.display = "none";
+        document.getElementById("draw").style.display = "block";
+    }
+}
+
+// function startFun(){
+//     toshow("head");
+//     let playerSelect = document.getElementById("option").value;
+// }
+
+function announceDraw(){
+    document.getElementById("draw").innerText = "Match Draw!!...Try Again!!";
 }
