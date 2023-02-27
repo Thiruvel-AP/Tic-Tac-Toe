@@ -8,13 +8,16 @@
     </head>
 
     <body id="bodyColor">
-        <h2 class="heading" id="head">Welcome to Tic-Tac-Toe!!!!!</h2>
+    <div id="head">
+        <h2 class="heading">Welcome to Tic-Tac-Toe!!!!!</h2>
        
         <!-- <label>Choose Any One Option!!!!</label>
-        <input type="radio" name="playerchoice" id="playerOne">
-        <label for="playerOne">Player X</label>
-        <input type="radio" name="playerchoice" id="playerTwo">
-        <label for="playerTwo">Player O</label> -->
+        <select name="dropdown" id="option">
+            <option>Select Any One</option>
+            <option value="x">Player X</option>
+            <option value="o">Player O</option>
+        </select> -->
+    </div>
          
         <div class="board" id="main-board">
             <!-- row1 -->
@@ -33,6 +36,8 @@
 
 <!-- condition for winner -->
         <span id="winner" class="winner-show"></span>
+        
+        <span id="draw" class="winner-show"></span>
 
         <script type="text/javascript" src="js/script.js"></script>
     </body>
